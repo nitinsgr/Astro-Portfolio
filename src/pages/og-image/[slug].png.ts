@@ -8,33 +8,6 @@ import { Resvg } from "@resvg/resvg-js";
 import { siteConfig } from "@/site-config";
 import { getFormattedDate } from "@/utils";
 
-const AssetDir = resolve("src", "assets");
-const RobotoMonoPath = join(AssetDir, "roboto-mono-regular.ttf");
-const RobotoMonoBoldPath = join(AssetDir, "roboto-mono-700.ttf");
-
-const RobotoMonoReg = readFileSync(RobotoMonoPath);
-const RobotoMonoBold = readFileSync(RobotoMonoBoldPath);
-
-const ogOptions: SatoriOptions = {
-	width: 1200,
-	height: 630,
-	// debug: true,
-	fonts: [
-		{
-			name: "Roboto Mono",
-			data: RobotoMonoReg,
-			weight: 400,
-			style: "normal",
-		},
-		{
-			name: "Roboto Mono",
-			data: RobotoMonoBold,
-			weight: 700,
-			style: "normal",
-		},
-	],
-};
-
 const markup = (title: string, pubDate: string) => html`<div
 	tw="flex flex-col w-full h-full bg-[#1d1f21] text-[#c9cacc]"
 >

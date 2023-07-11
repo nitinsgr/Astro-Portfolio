@@ -2,8 +2,13 @@ import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
-	content: ["./src/**/*.{astro,html,js,jsx,md,svelte,ts,tsx,vue}"],
+	content: [
+		"./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+		"./node_modules/flowbite/**/*.js",
+	],
 	darkMode: "class",
 	corePlugins: {
 		// disable aspect ratio as per docs -> @tailwindcss/aspect-ratio
@@ -26,10 +31,20 @@ export default {
 				accent: "var(--theme-accent)",
 				"accent-2": "var(--theme-accent-2)",
 			},
+			fontSize: {
+				sm: "0.8rem",
+				base: "1rem",
+				xl: "1.25rem",
+				"2xl": "1.563rem",
+				"3xl": "1.953rem",
+				"4xl": "2.441rem",
+				"5xl": "3.052rem",
+			},
+
 			fontFamily: {
-				// Add any custom fonts here
-				sans: [...fontFamily.sans],
-				serif: [...fontFamily.serif],
+				opensans: ['"Inter-Bold"', "sans-serif"],
+				// Add the new font here
+				regular: ['"Inter-Regular"', "serif"],
 			},
 			transitionProperty: {
 				height: "height",
@@ -38,56 +53,18 @@ export default {
 			// @ts-ignore
 			// Remove above once tailwindcss exposes theme type
 			typography: (theme) => ({
-				cactus: {
-					css: {
-						"--tw-prose-body": "var(--theme-text)",
-						"--tw-prose-headings": "var(--theme-accent-2)",
-						"--tw-prose-links": "var(--theme-text)",
-						"--tw-prose-bold": "var(--theme-text)",
-						"--tw-prose-bullets": "var(--theme-text)",
-						"--tw-prose-quotes": "var(--theme-quote)",
-						"--tw-prose-code": "var(--theme-text)",
-						"--tw-prose-hr": "0.5px dashed #666",
-						"--tw-prose-th-borders": "#666",
-					},
-				},
-				DEFAULT: {
-					css: {
-						a: {
-							"@apply cactus-link no-underline": "",
-						},
-						strong: {
-							fontWeight: "700",
-						},
-						code: {
-							border: "1px dotted #666",
-							borderRadius: "2px",
-						},
-						blockquote: {
-							borderLeftWidth: "none",
-						},
-						hr: {
-							borderTopStyle: "dashed",
-						},
-						thead: {
-							borderBottomWidth: "none",
-						},
-						"thead th": {
-							fontWeight: "700",
-							borderBottom: "1px dashed #666",
-						},
-						"tbody tr": {
-							borderBottomWidth: "none",
-						},
-						tfoot: {
-							borderTop: "1px dashed #666",
-						},
-					},
-				},
 				sm: {
 					css: {
 						code: {
 							fontSize: theme("fontSize.sm")[0],
+							fontWeight: "400",
+						},
+					},
+				},
+				md: {
+					css: {
+						h2: {
+							fontSize: "88px",
 							fontWeight: "400",
 						},
 					},
@@ -97,7 +74,9 @@ export default {
 	},
 	plugins: [
 		require("@tailwindcss/typography"),
+		require("@sira-ui/tailwind"),
 		require("@tailwindcss/aspect-ratio"),
+		require("flowbite/plugin"),
 		plugin(function ({ addComponents }) {
 			addComponents({
 				".cactus-link": {

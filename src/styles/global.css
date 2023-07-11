@@ -3,14 +3,28 @@
 @layer base {
 	:root {
 		color-scheme: light;
-		--theme-bg: #fafafa;
+		--theme-bg: white;
 		--theme-link: #567c77;
 		--theme-text: #22272a;
-		--theme-accent: #cc2a42;
+		--theme-accent: rgb(24, 19, 24);
 		--theme-accent-2: #111;
-		--theme-quote: #cc2a42;
+		--theme-quote: #5f5252;
 		--theme-menu-bg: rgb(250 250 250 / 0.85);
+		
 	}
+	@font-face {
+		font-family: 'Inter-Regular';
+		font-style: normal;
+		font-weight: 400;
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/Inter-Regular.tff') format('tff');
+	  }
+
+	  @font-face {
+		font-family: 'Inter-Bold';
+		font-display: block; /* This property will help us not flash unstyled text for a couple hundred milliseconds, and then it would act like font-display: swap */
+		src: url('/fonts/Inter-Bold.tff') format('tff');
+	  }
 
 	:root.dark {
 		color-scheme: dark;
@@ -24,11 +38,17 @@
 	}
 
 	html {
-		@apply h-full scroll-smooth border-t-2 border-textColor;
+		@apply h-full w-full  scroll-smooth border-t-0 border-textColor;
+		
 	}
 
 	html body {
-		@apply mx-auto flex h-full max-w-3xl flex-col bg-bgColor px-8 pt-16 font-mono text-sm font-normal text-textColor antialiased;
+		@apply mx-auto flex h-full max-w-4xl flex-col bg-bgColor px-8 pt-16 font-opensans text-textColor antialiased;
+		
+	}
+
+	h2{
+		font-size: 24px;
 	}
 }
 

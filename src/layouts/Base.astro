@@ -5,6 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SkipLink from "@/components/SkipLink";
+import '@fontsource/twinkle-star';
 import { siteConfig } from "@/site-config";
 
 interface Props {
@@ -12,21 +13,22 @@ interface Props {
 }
 
 const {
-	meta: { title, description = siteConfig.description, ogImage, articleDate },
+	meta: { title, description = siteConfig.description, ogImage, articleDate, role, logo },
 } = Astro.props;
 ---
 
 <html lang={siteConfig.lang}>
 	<head>
-		<BaseHead title={title} description={description} ogImage={ogImage} articleDate={articleDate} />
+		<BaseHead title={title} description={description} ogImage={ogImage} role={role} logo={logo}  articleDate={articleDate} />
 	</head>
 	<body>
-		<ThemeProvider />
+		<ThemeProvider/>
 		<SkipLink />
-		<Header />
+		<Header/>
 		<main id="main" class="flex-1">
 			<slot />
 		</main>
 		<Footer />
 	</body>
+	<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 </html>

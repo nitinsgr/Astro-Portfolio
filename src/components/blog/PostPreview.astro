@@ -4,20 +4,24 @@ import type { IElement } from "@/data/shared";
 import { getFormattedDate } from "@/utils";
 
 interface Props extends IElement {
-	post: CollectionEntry<"post">;
-	withDesc?: boolean;
+  post: CollectionEntry<"post">;
+  withDesc?: boolean;
 }
 
 const { post, as: Element = "div", withDesc = false } = Astro.props;
-const date = new Date(post.data.publishDate);
-const datetime = date.toISOString();
-const postDate = getFormattedDate(date);
+const postDate = getFormattedDate(post.data.publishDate, { month: "long" });
 ---
-
-<time datetime={datetime} class="min-w-[120px] text-gray-500">{postDate}</time>
-<Element>
-	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
-		{post.data.title}
-	</a>
-</Element>
-{withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
+<div class="container m-auto grid font-opensans">
+	
+	<div class="font-opensans">
+		{post.data.ogImage && (
+			<img width="400" height="400" src={post.data.ogImage} alt={post.data.title} />
+		  )}
+		  <Element>
+			<a href={`/posts/${post.slug}/`} class="text-xl decoration-none no-underline font-opensans font-bold" rel="prefetch">
+			  {post.data.title}
+			</a>
+		  </Element>
+	</div>	
+  </div>
+  

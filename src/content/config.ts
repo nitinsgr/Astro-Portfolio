@@ -22,6 +22,8 @@ const post = defineCollection({
 				.optional(),
 			tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase),
 			ogImage: z.string().optional(),
+			role: z.string().optional(), // Include the role property here
+			logo: z.string().optional(),
 		}),
 });
 
