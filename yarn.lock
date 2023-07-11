@@ -872,7 +872,7 @@
 
 "@netlify/esbuild-windows-64@0.14.39":
   version "0.14.39"
-  resolved "https://registry.yarnpkg.com/@netlify/esbuild-windows-64/-/esbuild-windows-64-0.14.39.tgz#477c22c04a3299599924e9e4c909c0dec5612f56"
+  resolved "https://registry.npmjs.org/@netlify/esbuild-windows-64/-/esbuild-windows-64-0.14.39.tgz"
   integrity sha512-I3gCdO8+6IDhT4Y1ZmV4o2Gg0oELv7N4kCcE4kqclz10fWHNjf19HQNHyBJe0AWnFV5ZfT154VVD31dqgwpgFw==
 
 "@netlify/esbuild-windows-arm64@0.14.39":
@@ -882,7 +882,7 @@
 
 "@netlify/esbuild@^0.14.39":
   version "0.14.39"
-  resolved "https://registry.yarnpkg.com/@netlify/esbuild/-/esbuild-0.14.39.tgz#66897af6d26336e5960b5ba74f1642f1d02a9c6a"
+  resolved "https://registry.npmjs.org/@netlify/esbuild/-/esbuild-0.14.39.tgz"
   integrity sha512-C3xpwdT2xw6SnSb+hLQoxjtikAKiz6BjQjzlIaysHDpGbmIcmUHZ/X+dyLtCqAvf15WNK5GSBZYOlpgcOE0WZA==
   optionalDependencies:
     "@netlify/esbuild-android-64" "0.14.39"
@@ -1013,12 +1013,12 @@
 
 "@resvg/resvg-js-win32-x64-msvc@2.4.1":
   version "2.4.1"
-  resolved "https://registry.npmjs.org/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/@resvg/resvg-js-win32-x64-msvc/-/resvg-js-win32-x64-msvc-2.4.1.tgz#83cae82dfe27121f85492eb4dc03f6fe33d8a703"
   integrity sha512-vY4kTLH2S3bP+puU5x7hlAxHv+ulFgcK6Zn3efKSr0M0KnZ9A3qeAjZteIpkowEFfUeMPNg2dvvoFRJA9zqxSw==
 
 "@resvg/resvg-js@^2.4.1":
   version "2.4.1"
-  resolved "https://registry.npmjs.org/@resvg/resvg-js/-/resvg-js-2.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/@resvg/resvg-js/-/resvg-js-2.4.1.tgz#07e9cd57f3c925a5fb075a313a0640fc74cba4a2"
   integrity sha512-wTOf1zerZX8qYcMmLZw3czR4paI4hXqPjShNwJRh5DeHxvgffUS5KM7XwxtbIheUW6LVYT5fhT2AJiP6mU7U4A==
   optionalDependencies:
     "@resvg/resvg-js-android-arm-eabi" "2.4.1"
