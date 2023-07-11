@@ -44,6 +44,7 @@
 		"@astrojs/netlify": "^2.3.0",
 		"@astrojs/prefetch": "^0.2.3",
 		"@astrojs/rss": "^2.4.3",
+		"@astrojs/vercel": "^3.7.0",
 		"@fontsource/twinkle-star": "^5.0.4",
 		"@mdx-js/react": "^2.3.0",
 		"@netlify/esbuild": "^0.14.39",

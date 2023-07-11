@@ -6,14 +6,14 @@ import remarkToc from "remark-toc";
 import prefetch from "@astrojs/prefetch";
 import m2dx from "astro-m2dx";
 import markdoc from "@astrojs/markdoc";
-
 import netlify from "@astrojs/netlify/functions";
+
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
 	// ! Please remember to replace the following site property with your own domain
 	site: "https://nitinsagar.in",
-
 	markdown: {
 		remarkPlugins: [remarkToc, m2dx],
 		remarkRehype: {
@@ -48,5 +48,5 @@ export default defineConfig({
 		},
 	},
 	output: "server",
-	adapter: netlify(),
+	adapter: vercel(),
 });
