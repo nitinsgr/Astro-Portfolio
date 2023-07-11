@@ -46,6 +46,7 @@
 		"@astrojs/rss": "^2.4.3",
 		"@fontsource/twinkle-star": "^5.0.4",
 		"@mdx-js/react": "^2.3.0",
+		"@netlify/esbuild": "^0.14.39",
 		"@sira-ui/tailwind": "^0.11.2",
 		"@theme-ui/mdx": "^0.16.0",
 		"astro": "^2.8.0",
